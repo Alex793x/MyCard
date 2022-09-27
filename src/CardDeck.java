@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardDeck {
-    private List<Card> newDeck = new ArrayList<>();
+    private static List<Card> newDeck = new ArrayList<>();
 
     public List<Card> getNewDeck() {
         return newDeck;
     }
 
     public void setNewDeck(List<Card> newDeck) {
-        this.newDeck = new ArrayList<>();
+        CardDeck.newDeck = new ArrayList<>();
     }
 
     // METHODS -----------------------------
@@ -40,6 +40,21 @@ public class CardDeck {
     public CardDeck() {
         createCardDeck();
     }
+
+    public static Card getNext() {
+        Card nextCard = newDeck.get(0);
+        System.out.println(newDeck.get(0));
+        CardDeck.newDeck.remove(0);
+        return nextCard;
+    }
+
+    public static Card getLast() {
+        Card lastCard = newDeck.get(newDeck.size() - 1);
+        System.out.println(newDeck.get(newDeck.size() - 1));
+        newDeck.remove(newDeck.size()-1);
+        return lastCard;
+    }
+
 
     public ArrayList<Card> createdDeck() {
         return new ArrayList<>(newDeck);
