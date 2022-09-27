@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardDeck {
-    private List<Card> newDeck;
+    private List<Card> newDeck = new ArrayList<>();
 
     public List<Card> getNewDeck() {
         return newDeck;
@@ -15,15 +15,30 @@ public class CardDeck {
     // METHODS -----------------------------
     public void createCardDeck() {
         for (Suit suit : Suit.values()) {
-            for (Rank rank : Rank.values()) {
+            for (Ranks rank : Ranks.values()) {
                 newDeck.add(new Card(suit,rank));
             }
         }
     }
 
+    public void addJoker() {
+        newDeck.add(new Card(Joker.JOKER));
+    }
+
+    public void addTwoJokers() {
+        addJoker();
+        addJoker();
+    }
+
+    public void addThreeJokers() {
+        addJoker();
+        addJoker();
+        addJoker();
+    }
+
     // CONSTRUCTOR -------------------------
-    public CardDeck(List<Card> newDeck) {
-        setNewDeck(newDeck);
+    public CardDeck() {
+        createCardDeck();
     }
 
     public ArrayList<Card> createdDeck() {

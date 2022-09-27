@@ -1,6 +1,7 @@
 public class Card {
-    private final Suit suit;
-    private final Rank rank;
+    private  Suit suit;
+    private  Ranks rank;
+    private  Joker joker;
 
 
     // GETTERS -------------
@@ -8,12 +9,20 @@ public class Card {
         return suit;
     }
 
-    public Rank getRank() {
+    public Ranks getRank() {
         return rank;
     }
 
+    public Joker getJoker() {
+        return joker;
+    }
+
     // Constructor ---------
-    public Card(Suit suit, Rank rank) {
+    public Card(CardDeck.) {
+        this.joker = joker;
+    }
+
+    public Card(Suit suit, Ranks rank) {
         this.suit = suit;
         this.rank = rank;
     }
@@ -23,10 +32,11 @@ public class Card {
 
     @Override
     public String toString() {
-        if (this.rank == Rank.JOKER) {
-            return "Card is a JOKER";
+        if (this.joker == Joker.JOKER) {
+            return "Card is " + joker;
         } else {
             return "Card is " + rank + " of " + suit;
         }
+
     }
 }
