@@ -18,7 +18,7 @@ public class Card {
     }
 
     // Constructor ---------
-    public Card(CardDeck.) {
+    public Card(Joker joker) {
         this.joker = joker;
     }
 
